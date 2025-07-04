@@ -15,11 +15,11 @@ export class DashboardConstants {
     },
     {
       name: "Pending Review(8)",
-      isSelected: true
+      isSelected: false
     },
     {
       name: "Referrals(3)",
-      isSelected: true
+      isSelected: false
     }
   ]
 
