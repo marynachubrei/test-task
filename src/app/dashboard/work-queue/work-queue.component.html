@@ -4,7 +4,7 @@
       <app-action-button
         *ngFor="let navButton of tableButtons"
         [title]="navButton.name"
-        [isSelected]="true"
+        [isSelected]="navButton.isSelected"
         [isIcon]="false"
       ></app-action-button></div>
     <app-table
