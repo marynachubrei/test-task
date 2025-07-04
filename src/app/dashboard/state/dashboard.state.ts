@@ -1,5 +1,6 @@
-import {UserStateInterface} from "./user.interface";
+import {DashboardStateInterface} from "./dashboard.interface";
 
-export const UserState: UserStateInterface = {
-  user: null,
+export const DashboardState: DashboardStateInterface = {
+  workQueue: null,
+  accountList: null,
 }

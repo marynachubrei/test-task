@@ -1,1 +1,45 @@
-<p>performance-metrics works!</p>
+<div class="heading-2-primary">Performance Metrics</div>
+<div class="performance-metric">
+  <app-wrapper
+    *ngFor="let performanceMetric of (performanceMetrics$|async)"
+    [title]="performanceMetric.title"
+    [isH100]="true"
+    class="performance-metric-card"
+  >
+    <ng-container
+      *ngIf="performanceMetric?.status"
+      header-content
+    >
+      <div class="performance-metric-status dots">
+        <span
+          *ngFor="let _ of [].constructor('Very Strong' | getStrengthIndicatorLevel); let i = index"
+          class="dot"
+        ></span>
+      </div>
+    </ng-container>
+
+    <ng-container wrapper-content>
+      <div *ngIf="!performanceMetric?.progress?.length" class="performance-metric-card-content">
+        <div class="performance-metric-description">
+          <span class="main-content-text-placeholder">
+            <span class="heading-0">{{performanceMetric?.status??performanceMetric.value}}
+            </span>
+            {{performanceMetric.comparison}}
+          </span>
+        </div>
+        <div class="link">{{performanceMetric.linkText}} →</div>
+      </div>
+
+      <div
+        *ngIf="performanceMetric?.progress?.length"
+        class="performance-metric-progress-bar"
+      >
+        <app-progress-bar
+          *ngFor="let progress of performanceMetric?.progress"
+          [value]="progress.value"
+          [target]="100" [label]="progress.label+': '+progress.value+'%'"
+        ></app-progress-bar>
+      </div>
+    </ng-container>
+  </app-wrapper>
+</div>

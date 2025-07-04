@@ -1,0 +1,52 @@
+@import "../../../../styles/variables";
+
+.example-container {
+  height: 400px;
+  overflow: auto;
+  color: white;
+}
+
+table {
+  width: 100%;
+}
+
+.t-header {
+  background-color: #252a3d!important;
+
+  th {
+    padding: 5px 10px;
+  }
+
+}
+
+.t-cell {
+  //color: white;
+  border-bottom: $border-neon-blue;
+  td {
+    padding: 10px;
+  }
+}
+
+.t-sub-key {
+  color: #79859a;
+}
+
+.bg-blue-light {
+  background-color: #252a3d;
+
+}
+
+.t-menu {
+  border-radius: 50%;
+  border: 1px solid $white;
+  height: 24px;
+  width: 24px;
+display: flex;
+  justify-content: center;
+align-items: center;
+}
+
+.t {
+  overflow-x: auto;
+  max-width: 100%;
+}

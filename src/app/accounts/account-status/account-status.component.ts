@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./account-status.component.scss']
 })
 export class AccountStatusComponent {
-
+  accountStatusId = 5
+  statuses=[{
+    name: "Submitted",
+    id:1
+  }, {
+    name: "Review",
+    id:2
+  },
+    {
+      name: "Quote",
+      id:3
+    },
+    {
+      name: "Bind",
+      id:4
+    },{
+      name: "Issue",
+      id:5
+    },{
+      name: "Renew",
+      id:6
+    }]
 }

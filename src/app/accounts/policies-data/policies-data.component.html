@@ -1,1 +1,23 @@
-<p>policies-data works!</p>
+<div class="heading-2-primary title-gap">{{titles.policies}}</div>
+
+<app-wrapper>
+  <ng-container header-content>
+    <div class="d-flex title-gap">
+      <div class="button-gap">
+        <app-search class="communication-search"[isUnderlined]="true" [height]="30"></app-search>
+
+        <app-action-button
+          *ngFor="let policiesDataAction of policiesDataActions"
+          [title]="policiesDataAction.name"
+          [isSelected]="policiesDataAction.isSelected"
+        ></app-action-button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container wrapper-content>
+    <div class="accounts-table">
+      <app-table  [data]="policiesData$|async" [columns]="policiesDataColumns">   </app-table>
+    </div>
+  </ng-container>
+</app-wrapper>

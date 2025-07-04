@@ -1,1 +1,9 @@
-<p>user-initials works!</p>
+<div class="d-flex user-data">
+  <div
+    class="user-profile-initials"
+    [style.height.px]="size"
+    [style.width.px]="size"
+  >
+    {{ user?.firstName?.[0] || '' }}{{ user?.lastName?.[0] || '' }}
+  </div>
+</div>

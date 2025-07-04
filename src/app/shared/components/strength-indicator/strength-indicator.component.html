@@ -1,1 +1,9 @@
-<p>strength-indicator works!</p>
+<div class="strength-indicator">
+  <div *ngIf="label|getStrengthIndicatorLevel" class="dots">
+    <span
+      *ngFor="let _ of [].constructor(label | getStrengthIndicatorLevel); let i = index"
+      class="dot"
+    ></span>
+  </div>
+  <span class="label">{{ label }}</span>
+</div>

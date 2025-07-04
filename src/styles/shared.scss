@@ -1,0 +1,125 @@
+@import "mixins";
+
+.layout-settings {
+  display: flex;
+  max-width: $max-layout-width;
+  margin: 0 auto;
+}
+
+.user-data {
+  display: flex;
+  align-items: center;
+
+  .user-profile-initials {
+    border-radius: 50%;
+    background-color: #1f3685;
+    color: $white;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+
+    &-big {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}
+
+.heading-0 {
+  @include text($light-gray, 42px, 400, 42px);
+}
+
+.heading-1 {
+  @include text($light-gray, 36px, 400, 42px);
+}
+
+.heading-2-primary {
+ @include text($light-gray, 32px, 500, 28px);
+}
+
+.heading-3 {
+  @include text($light-gray, 26px, 400, 36px);
+}
+
+.heading-4 {
+  @include text($light-gray, 14px, 600, 24px);
+}
+
+.heading-4-placeholder {
+  @include text($dark-gray, 14px, 600, 24px);
+}
+
+.main-content-text {
+  @include text($light-gray, 16px, 400, 24px);
+}
+
+.main-content-text-placeholder {
+  @include text($dark-gray, 16px, 400, 24px);
+}
+
+.sub-content-text {
+  @include text($light-gray, 14px, 400, 20px);
+}
+
+.sub-content-text-placeholder {
+  @include text($dark-gray, 14px, 400, 20px);
+}
+
+
+
+.sub-title {
+  color: #79859a;
+  font-size: 14px;
+}
+
+.sub-title-2 {
+  color: $dark-gray;
+  font-size: 24px;
+}
+
+.highlighted-amount {
+  color: $blue;
+  font-weight: 600;
+}
+
+.link {
+  @include text($blue, 14px, 400, 20px);
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  gap: 4px;
+  margin-right: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $light-blue;
+}
+
+.items-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px
+}
+
+.button-gap {
+  display: flex;
+  gap: 8px
+}
+
+.title-gap {
+  margin-bottom: 20px;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

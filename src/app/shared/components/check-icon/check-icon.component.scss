@@ -1,0 +1,37 @@
+@import "../../../../../src/styles/variables";
+
+.check-icon{
+  border-radius: 50%;
+  border: 2px solid transparent;
+  color: $neon-green;
+  stroke: $neon-green;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-green {
+    border-color: $neon-green;
+    color: $neon-green;
+    stroke: $neon-green;
+  }
+
+  &-blue {
+    border-color: $neon-blue;
+    color: $neon-blue;
+    stroke: $neon-blue;
+  }
+
+  &-yellow {
+    border-color: $neon-yellow;
+    color: $neon-yellow;
+    stroke: $neon-yellow;
+  }
+
+  &-disabled{
+    border: 2px dashed $dark-gray;
+    stroke: $dark-gray;
+  }
+}
+

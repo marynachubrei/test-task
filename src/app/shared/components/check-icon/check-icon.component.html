@@ -1,1 +1,5 @@
-<p>check-icon works!</p>
+<div class="check-icon" [class]="'check-icon-'+mode" [class.check-icon-disabled]="isDisabled">
+  <mat-icon *ngIf="!number" [svgIcon]="type"></mat-icon>
+  <span *ngIf="number"> {{number}}</span>
+
+</div>

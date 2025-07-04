@@ -2,36 +2,44 @@ import {Injectable} from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import {of} from "rxjs";
 import { catchError, map, mergeMap, take, tap } from "rxjs/operators";
-import {DashboardService} from "../services/dashboard.service";
+import {AccountsService} from "../services/accounts.service";
+
+import {Communication, PerformanceMetric, Policy, PolicyData} from "../common/models";
 import {
-  getAccountListStart,
-  getAccountListSuccess,
-  getWorkQueueFailure,
-  getWorkQueueStart,
-  getWorkQueueSuccess
-} from "./dashboard.actions";
-import {Account, WorkQueue} from "../common/models";
+  getCommunicationDataFailure,
+  getCommunicationDataStart,
+  getCommunicationDataSuccess,
+  getPerformanceMetricsStart,
+  getPerformanceMetricsSuccess,
+  getPoliciesDataStart,
+  getPoliciesDataSuccess,
+  getPoliciesFailure,
+  getPoliciesStart,
+  getPoliciesSuccess,
+  getPPerformanceMetricsFailure
+} from "./accounts.actions";
+import {getPoliciesData} from "./accounts.selectors";
 
 @Injectable()
-export class DashboardEffects {
+export class AccountsEffects {
   constructor(
     private actions$: Actions,
-    private dashboardService: DashboardService,
+    private accountsService: AccountsService,
   ) {
   }
 
-  getWorkQueue$ = createEffect(() =>
+  getPerformanceMetrics$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(getWorkQueueStart),
+      ofType(getPerformanceMetricsStart),
       mergeMap((action) =>
-        this.dashboardService.gerWorkQueue(action.id).pipe(
-          map((workQueue: WorkQueue[]) => {
-            console.log(workQueue)
-            return getWorkQueueSuccess({ workQueue });
+        this.accountsService.gerPerformanceMetrics(action.id).pipe(
+          map((performanceMetrics: PerformanceMetric[]) => {
+            console.log(performanceMetrics)
+            return getPerformanceMetricsSuccess({ performanceMetrics });
           }),
           catchError(() => {
             return of(
-              getWorkQueueFailure(),
+              getPPerformanceMetricsFailure(),
             );
           }),
         ),
@@ -39,17 +47,53 @@ export class DashboardEffects {
     ),
   );
 
-  getAccountList$ = createEffect(() =>
+  getPolicies$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(getAccountListStart),
+      ofType(getPoliciesStart),
       mergeMap((action) =>
-        this.dashboardService.gerAccountList().pipe(
-          map((accountList: Account[]) => {
-            return getAccountListSuccess({ accountList });
+        this.accountsService.getPolicies(action.id).pipe(
+          map((policies: Policy[]) => {
+            return getPoliciesSuccess({ policies });
           }),
           catchError(() => {
             return of(
-              getWorkQueueFailure(),
+              getPoliciesFailure(),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  getCommunicationData$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getCommunicationDataStart),
+      mergeMap((action) =>
+        this.accountsService.getCommunicationData(action.id).pipe(
+          map((communicationData: Communication[]) => {
+            return getCommunicationDataSuccess({ communicationData });
+          }),
+          catchError(() => {
+            return of(
+              getCommunicationDataFailure(),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  getPoliciesData$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getPoliciesDataStart),
+      mergeMap((action) =>
+        this.accountsService.getPoliciesData(action.id).pipe(
+          map((policiesData: PolicyData[]) => {
+            return getPoliciesDataSuccess({ policiesData });
+          }),
+          catchError(() => {
+            return of(
+              getCommunicationDataFailure(),
             );
           }),
         ),

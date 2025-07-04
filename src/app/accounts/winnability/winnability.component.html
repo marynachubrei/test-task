@@ -1,1 +1,117 @@
-<p>winnability works!</p>
+<div class="winnability">
+        <div class="heading-2-primary">{{selectedSubOption}}</div>
+
+        <div class="winnability-data">
+          <app-wrapper
+            class="winnability-data-card"
+            [title]="'Overall Score'"
+            [isUnderlined]="false"
+            [isH100]="true"
+          >
+            <ng-container wrapper-content>
+              <div class="d-flex">
+                <div class="heading-1">82%</div>
+                <app-strength-indicator [label]="'Very Strong'"></app-strength-indicator>
+              </div>
+            </ng-container>
+          </app-wrapper>
+
+          <app-wrapper
+            class="winnability-data-card"
+            [title]="'Historical trend'"
+            [isUnderlined]="false"
+          >
+            <ng-container wrapper-content>
+              <app-trend-card></app-trend-card>
+            </ng-container>
+          </app-wrapper>
+
+          <app-wrapper
+            class="winnability-data-card"
+            [title]="'Position'"
+            [isUnderlined]="false"
+            [isH100]="true"
+          >
+            <ng-container wrapper-content>
+              <div class="winnability-data-progress-bar">
+                <app-progress-bar [value]="82" [target]="100" [label]="'Your Score: 82%'"></app-progress-bar>
+                <app-progress-bar [value]="68" [target]="100" [label]="'Market Avg: 68%'"></app-progress-bar>
+                <app-progress-bar [value]="82" [target]="100" [label]="'Top competitor: 82%'"></app-progress-bar>
+              </div>
+            </ng-container>
+          </app-wrapper>
+        </div>
+
+        <div class="winnability-progress">
+          <app-wrapper
+            class="winnability-progress-card"
+            [isUnderlined]="false"
+          >
+            <ng-container wrapper-content>
+              <div
+                class="winnability-progress-title"
+              >
+                <app-check-icon [type]="'arrowUp'"></app-check-icon>
+                <div>Increasing Winnability</div>
+              </div>
+
+              <div class="winnability-progress-bar">
+
+                <app-progress-bar [value]="88" [target]="100" [mode]="'green'" [label]="'+28%'"></app-progress-bar>
+                <app-progress-bar [value]="85" [target]="100" [mode]="'green'" [label]="'+22%'"></app-progress-bar>
+                <app-progress-bar [value]="66" [target]="100" [mode]="'green'" [label]="'+16%'"></app-progress-bar>
+                <app-progress-bar [value]="60" [target]="100" [mode]="'green'" [label]="'+11%'"></app-progress-bar>
+              </div>
+            </ng-container>
+          </app-wrapper>
+
+          <app-wrapper
+            class="winnability-progress-card"
+            [isUnderlined]="false"
+          >
+            <ng-container wrapper-content>
+              <div
+                class="winnability-progress-title"
+              >
+                <app-check-icon
+                  [type]="'arrowDown'"
+                  [mode]="'yellow'"
+                ></app-check-icon>
+                <div>Increasing Winnability</div>
+              </div>
+              <div class="winnability-progress-bar">
+                <app-progress-bar [value]="88" [target]="100" [mode]="'yellow'" [label]="'+28%'"></app-progress-bar>
+                <app-progress-bar [value]="85" [target]="100" [mode]="'yellow'" [label]="'+22%'"></app-progress-bar>
+                <app-progress-bar [value]="66" [target]="100" [mode]="'yellow'" [label]="'+16%'"></app-progress-bar>
+                <app-progress-bar [value]="60" [target]="100" [mode]="'yellow'" [label]="'+11%'"></app-progress-bar>
+              </div>
+            </ng-container>
+          </app-wrapper>
+        </div>
+          <app-wrapper [isUnderlined]="false">
+            <ng-container wrapper-content>
+              <div class="winnability-recommendations-title heading-3"> <mat-icon [svgIcon]="icons.rocket"></mat-icon>AI-Powered Recommendations</div>
+              <div class="winnability-recommendations-data">
+                <div>
+                  <div class="heading-4">Offer 5% premium discount in exchange for 3-year commitment</div>
+                  <div class="heading-4-placeholder">Historical win rate increases 24% with multi-year commitments. Current pricing is 12% above market average. This approach would strengthen retention while maintaining adequate profitability.</div>
+                </div>
+
+                  <app-button class="winnability-recommendations-button" [isWide]=true [title]="'Apply'" [mode]="'green'" [isIcon]="false"></app-button>
+
+
+              </div>
+
+
+                <div class="winnability-recommendations-data">
+                  <div>
+                  <div class="heading-4">Propose risk control services for cargo handling procedures</div>
+                  <div class="heading-4-placeholder">Can potentially reduce loss ratio by 15–20% based on similar maritime accounts in your portfolio. Specific focus on loading/unloading operations would address the most frequent claim scenarios.</div>
+                </div>
+                <app-button class="winnability-recommendations-button" [isWide]=true [title]="'Apply'" [mode]="'green'" [isIcon]="false"></app-button>
+              </div>
+
+
+            </ng-container>
+          </app-wrapper>
+      </div>

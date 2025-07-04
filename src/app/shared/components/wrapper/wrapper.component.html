@@ -1,1 +1,21 @@
-<p>wrapper works!</p>
+
+  <div
+    class="wrapper"
+    [class.wrapper-underlined]="isUnderlined"
+    [class.wrapper-selected]="isSelected"
+    [class.h-100]="isH100"
+  >
+    <div class="wrapper-title" [class]="titleClass">
+      <div class="heading-3">{{title}}</div>
+      <ng-content select="[header-content]"></ng-content>
+    </div>
+
+
+    <div class="wrapper-content">
+      <ng-content select="[wrapper-content]"></ng-content>
+    </div>
+
+
+  </div>
+
+

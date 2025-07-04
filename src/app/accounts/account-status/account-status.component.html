@@ -1,1 +1,24 @@
-<p>account-status works!</p>
+<div class="heading-2-primary account-status-title">Account Status</div>
+
+<app-wrapper >
+  <ng-container wrapper-content>
+    <div class="account-status">
+      <div *ngFor="let status of statuses; let isLast=last" >
+        <div class="account-status-list d-flex">
+          <app-check-icon
+            [isDisabled]="accountStatusId<(status?.id|| false)"
+          ></app-check-icon>
+          <div
+            *ngIf="!isLast" class="dashed-line"
+            [class.dashed-line-disabled]="accountStatusId-1<(status?.id|| false)"
+          ></div>
+        </div>
+        <div class="account-status-name heading-3">{{ status?.name }}</div>
+      </div>
+
+    </div>
+  </ng-container>
+</app-wrapper>
+
+
+

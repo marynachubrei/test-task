@@ -1,0 +1,53 @@
+@import "../../../../../src/styles/variables";
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.progress-bar {
+  position: relative;
+  background: #2d324a;
+  width: 200px;
+  height: 25px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.progress-fill {
+  background: linear-gradient(to right,  #2d324a, $neon-blue,);
+  height: 100%;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.blue {
+  background: linear-gradient(to right,  #2d324a, $neon-blue,);
+}
+
+.green {
+  background: linear-gradient(to right,  #2d324a, $neon-green);
+}
+
+.yellow {
+  background: linear-gradient(to right,  #2d324a, $neon-yellow);
+}
+
+.progress-label {
+ // background: #4a8df6;
+  border-radius: 50%;
+  padding: 4px 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}

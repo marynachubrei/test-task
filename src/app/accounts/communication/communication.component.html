@@ -1,1 +1,56 @@
-<p>communication works!</p>
+<div class="heading-2-primary title-gap">{{titles.communication}}</div>
+
+<app-wrapper>
+  <ng-container header-content>
+    <div class="d-flex title-gap">
+      <div class="button-gap">
+      <app-search class="communication-search"[isUnderlined]="true" [height]="30"></app-search>
+
+        <app-action-button
+          *ngFor="let communicationAction of communicationActions"
+          [title]="communicationAction.name"
+          [isSelected]="communicationAction.isSelected"
+        ></app-action-button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container wrapper-content>
+    <div class="communication-cards">
+      <app-wrapper class="communication-card" *ngFor="let data of communicationData$|async" [isSelected]="data.status==='NEW'" [isUnderlined]="false">
+        <ng-container wrapper-content>
+          <div  >
+            <div class="communication-card-title" >
+              <div
+                *ngIf="data?.status"
+                class="communication-status main-content-text"
+              >{{data?.status|uppercase}}</div>
+              <div class="heading-3">{{data?.title}}</div>
+            </div>
+
+            <div class="sub-content-text-placeholder">
+              {{data?.sender}} // {{data.date}}
+            </div>
+
+            <div class="communication-card-message sub-content-text">{{data.message}}</div>
+
+            <div *ngIf="data?.attachments" class="communication-card-attachments">
+              <mat-icon [svgIcon]="icons.paperclip"></mat-icon>
+              {{data.attachments}} attachments
+            </div>
+
+            <app-button
+              *ngIf="data?.action"
+              [title]="data.action??''"
+              [isSelected]="true"
+              [isIcon]="false"
+              [isWide]="true"
+              class="communication-card-action"
+            ></app-button>
+          </div>
+        </ng-container>
+      </app-wrapper>
+    </div>
+  </ng-container>
+</app-wrapper>
+
+

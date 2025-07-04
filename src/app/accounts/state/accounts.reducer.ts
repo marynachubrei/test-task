@@ -1,20 +1,33 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import {DashboardState} from "./dashboard.state";
-import {getAccountListSuccess, getWorkQueueSuccess} from "./dashboard.actions";
-import {DashboardStateInterface} from "./dashboard.interface";
+import {AccountsState} from "./accounts.state";
+import {
+  getCommunicationDataSuccess,
+  getPerformanceMetricsSuccess,
+  getPoliciesDataSuccess,
+  getPoliciesSuccess
+} from "./accounts.actions";
+import {AccountsStateInterface} from "./accounts.interface";
 
-const _dashboardReducer = createReducer(
-  DashboardState,
-  on(getWorkQueueSuccess, (state, action) => ({
+const _accountReducer = createReducer(
+  AccountsState,
+  on(getPerformanceMetricsSuccess, (state, action) => ({
     ...state,
-    workQueue: action.workQueue,
+    performanceMetrics: action.performanceMetrics,
   })),
-  on(getAccountListSuccess, (state, action) => ({
+  on(getPoliciesSuccess, (state, action) => ({
     ...state,
-    accountList: action.accountList,
+    policies: action.policies,
+  })),
+  on(getCommunicationDataSuccess, (state, action) => ({
+    ...state,
+    communicationData: action.communicationData,
+  })),
+  on(getPoliciesDataSuccess, (state, action) => ({
+    ...state,
+    policiesData: action.policiesData,
   })),
 );
 
-export function dashboardReducer(state: DashboardStateInterface | undefined, action: Action) {
-  return _dashboardReducer(state, action);
+export function accountsReducer(state: AccountsStateInterface | undefined, action: Action) {
+  return _accountReducer(state, action);
 }

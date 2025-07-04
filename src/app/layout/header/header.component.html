@@ -1,1 +1,10 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header-content layout-settings">
+    <div class="heading-1 text-truncate">Hi {{(user$|async)?.firstName}}, welcome! You have {{(user$|async)?.openedTasks}} open tasks.</div>
+    <div class="header-actions">
+      <app-search class="header-search"></app-search>
+      <app-user-initials [user]="(user$|async)" [size]="44"></app-user-initials>
+    </div>
+  </div>
+</div>
+

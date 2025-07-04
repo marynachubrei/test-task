@@ -1,0 +1,28 @@
+@import "../../../../src/styles/variables";
+
+.market-intelligence{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &-circle {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    margin-right: 8px;
+    position: relative;
+    top: 4px;
+
+    &-red {
+      background-color: $red;
+    }
+
+    &-yellow {
+     background-color:  $yellow
+    }
+
+    &-blue {
+      background-color:  $blue;
+    }
+  }
+}

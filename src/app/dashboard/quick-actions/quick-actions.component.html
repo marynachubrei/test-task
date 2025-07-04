@@ -1,1 +1,13 @@
-<p>quick-actions works!</p>
+<app-wrapper [title]="titles.quickActions" [titleClass]="'title-gap'">
+  <ng-container wrapper-content>
+    <div class="quick-actions button-gap">
+      <app-button
+        *ngFor="let quickAction of quickActions"
+        [title]="quickAction.name"
+        [isSelected]="true"
+        [isIcon]="false"
+        [isWide]="true"
+      ></app-button>
+    </div>
+  </ng-container>
+</app-wrapper>

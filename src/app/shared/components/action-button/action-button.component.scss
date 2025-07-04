@@ -1,0 +1,23 @@
+@import "../../../../../src/styles/variables";
+
+.action-button {
+  padding: 2px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: $neon-blue;
+  background-color: transparent;
+  border: 1px solid $neon-blue;
+
+  &:hover {
+    background-color: rgba(58, 143, 255, 0.1);
+  }
+
+  &-selected {
+    background-color: $neon-blue;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $dark-blue;
+  }
+}

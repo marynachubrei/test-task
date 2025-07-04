@@ -1,8 +1,10 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import {DashboardStateInterface} from "./dashboard.interface";
+import {AccountsStateInterface} from "./accounts.interface";
 
-export const DASHBOARD_STATE_NAME = "dashboard-state";
-export const getDashboardState = createFeatureSelector<DashboardStateInterface>(DASHBOARD_STATE_NAME);
+export const ACCOUNTS_STATE_NAME = "accounts-state";
+export const getAccountsState = createFeatureSelector<AccountsStateInterface>(ACCOUNTS_STATE_NAME);
 
-export const getWorkQueue = createSelector(getDashboardState, (state)=>state?.workQueue)
-export const getAccountList = createSelector(getDashboardState, (state)=>state?.accountList)
+export const getPerformanceMetrics = createSelector(getAccountsState, (state)=>state?.performanceMetrics)
+export const getPolicies = createSelector(getAccountsState, (state)=>state?.policies)
+export const getCommunicationData = createSelector(getAccountsState, (state)=>state?.communicationData)
+export const getPoliciesData = createSelector(getAccountsState, (state)=>state?.policiesData)

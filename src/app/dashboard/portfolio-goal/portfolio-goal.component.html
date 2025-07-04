@@ -1,1 +1,14 @@
-<p>portfolio-goal works!</p>
+<app-wrapper class="portfolio-goal h-100" [title]="'Portfolio goal'" [isH100]="true" [titleClass]="'title-gap'">
+  <ng-container wrapper-content>
+    <div class="sub-title">New business target</div>
+    <app-progress-bar
+      [value]="8.1"
+      [target]="12"
+    ></app-progress-bar>
+    <div class="sub-title">Annual GWP Target</div>
+    <app-progress-bar
+      [value]="28.4"
+      [target]="42"
+    ></app-progress-bar>
+  </ng-container>
+</app-wrapper>

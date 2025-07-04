@@ -1,31 +1,55 @@
 import {Injectable} from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import {UserService} from "../../services/user.service";
 import {of} from "rxjs";
-import {getGetUserFailure, getGetUserStart, getGetUserSuccess} from "./user.actions";
-import {User} from "../../commons/models";
 import { catchError, map, mergeMap, take, tap } from "rxjs/operators";
+import {DashboardService} from "../services/dashboard.service";
+import {
+  getAccountListStart,
+  getAccountListSuccess,
+  getWorkQueueFailure,
+  getWorkQueueStart,
+  getWorkQueueSuccess
+} from "./dashboard.actions";
+import {Account, WorkQueue} from "../common/models";
 
 @Injectable()
-export class UserEffects {
+export class DashboardEffects {
   constructor(
     private actions$: Actions,
-    private userService: UserService,
+    private dashboardService: DashboardService,
   ) {
   }
 
-  getMeasureAutomations$ = createEffect(() =>
+  getWorkQueue$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(getGetUserStart),
+      ofType(getWorkQueueStart),
       mergeMap((action) =>
-        this.userService.getUser(action.id).pipe(
-          map((user: User) => {
-            console.log(user)
-            return getGetUserSuccess({ user });
+        this.dashboardService.gerWorkQueue(action.id).pipe(
+          map((workQueue: WorkQueue[]) => {
+            console.log(workQueue)
+            return getWorkQueueSuccess({ workQueue });
           }),
           catchError(() => {
             return of(
-              getGetUserFailure(),
+              getWorkQueueFailure(),
+            );
+          }),
+        ),
+      ),
+    ),
+  );
+
+  getAccountList$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getAccountListStart),
+      mergeMap((action) =>
+        this.dashboardService.gerAccountList().pipe(
+          map((accountList: Account[]) => {
+            return getAccountListSuccess({ accountList });
+          }),
+          catchError(() => {
+            return of(
+              getWorkQueueFailure(),
             );
           }),
         ),

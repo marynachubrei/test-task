@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './accounts-overview.component.html',
   styleUrls: ['./accounts-overview.component.scss']
 })
+
 export class AccountsOverviewComponent {
 
 }

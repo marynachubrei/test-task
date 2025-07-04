@@ -1,0 +1,24 @@
+@import "../../../../src/styles/variables";
+
+.header{
+
+  //max-width: 1930px;
+
+  border-bottom: $border-blue ;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  &-actions {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  &-search {
+    width: 400px;
+    margin-right: 10px;
+  }
+}

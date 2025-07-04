@@ -1,0 +1,16 @@
+.accounts{
+  &-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+
+    &-item {
+      padding-top: 30px;
+    }
+  }
+
+  &-status, &-compliance-and-documentation {
+    flex: 1 1 550px;
+  }
+}

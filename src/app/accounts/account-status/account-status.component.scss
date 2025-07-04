@@ -1,0 +1,29 @@
+@import "../../../../src/styles/variables";
+.account-status {
+  display: flex;
+  padding: 20px;
+
+  &-title {
+    margin-bottom: 20px;
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &-name {
+    margin-top: 15px;
+  }
+}
+
+.dashed-line {
+  padding: 0 4px;
+  border-top: 1px dashed $neon-green;
+  width: 70px;
+  margin: 8px;
+
+  &-disabled {
+    border-top: 1px dashed $dark-gray;
+  }
+}

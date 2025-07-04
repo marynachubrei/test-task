@@ -1,1 +1,10 @@
-<p>progress-bar works!</p>
+<div class="progress-wrapper">
+  <div class="progress-bar">
+    <div class="progress-fill" [class]="mode" [style.width.%]="Math.round((value/target)*100)">
+      <span *ngIf="isCountVisible" class="progress-label">${{value}}M</span>
+    </div>
+  </div>
+  <div *ngIf="label" class="progress-target sub-content-text">{{label}}</div>
+
+</div>
+<div *ngIf="isCountVisible" class="progress-value sub-title">{{Math.round((value/target)*100)}}%</div>

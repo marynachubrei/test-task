@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DashboardConstants} from "../common/constants";
 
 @Component({
   selector: 'app-quick-actions',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./quick-actions.component.scss']
 })
 export class QuickActionsComponent {
-
+  quickActions = DashboardConstants.QUICK_ACTIONS;
+  titles = DashboardConstants.TITLES;
 }

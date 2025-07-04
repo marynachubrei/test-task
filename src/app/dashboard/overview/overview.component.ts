@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IconConstants} from "../../shared/icons/icon-constants";
 
 @Component({
   selector: 'app-overview',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent {
+
+
 
 }

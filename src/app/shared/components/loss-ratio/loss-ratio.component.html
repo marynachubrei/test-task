@@ -1,1 +1,2 @@
-<p>loss-ratio works!</p>
+<div *ngIf="ratio; else noData" class="ratio d-flex" [ngClass]="ratio | getLossRatioBadgeBackground">{{ratio}}%</div>
+<ng-template #noData>N/A</ng-template>

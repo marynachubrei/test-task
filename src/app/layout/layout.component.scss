@@ -1,0 +1,11 @@
+@import "../../../src/styles/variables";
+
+.layout {
+  padding: 20px 30px 30px 30px;
+  flex-direction: column;
+
+  &-header {
+    border-bottom: $border-blue ;
+  }
+
+}

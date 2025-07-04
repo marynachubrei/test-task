@@ -1,1 +1,16 @@
-<p>policy-card works!</p>
+
+  <app-wrapper [isUnderlined]="false">
+    <ng-container wrapper-content>
+      <div class="policy-card">
+        <div class="policy-card-title" [ngClass]="colorClass">
+          <mat-icon class="policy-card-title-icon" [svgIcon]="icon"></mat-icon>
+          <span class="title heading-3">{{ title }}</span>
+        </div>
+        <div class="premium sub-title-2">Premium: ${{ premium | number }}</div>
+        <div class="eff-date sub-title-2">Eff.Date: {{ effDate || '---' }}</div>
+      </div>
+
+    </ng-container>
+
+  </app-wrapper>
+

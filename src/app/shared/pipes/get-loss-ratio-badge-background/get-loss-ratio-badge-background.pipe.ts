@@ -1,12 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getLossRatioBadgeBackground'
+  name: 'getLossRatioBadgeBackground', standalone: true,
 })
 export class GetLossRatioBadgeBackgroundPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(ratio: number): string {
+
+    if (isNaN(ratio)) return '';
+
+    if (ratio < 35) return 'green';
+    if (ratio <= 60) return 'yellow';
+    return 'red';
   }
 
 }

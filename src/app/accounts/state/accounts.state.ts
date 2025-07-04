@@ -1,6 +1,8 @@
-import {DashboardStateInterface} from "./dashboard.interface";
+import {AccountsStateInterface} from "./accounts.interface";
 
-export const DashboardState: DashboardStateInterface = {
-  workQueue: null,
-  accountList: null,
+export const AccountsState: AccountsStateInterface = {
+  performanceMetrics: null,
+  policies: null,
+  communicationData: null,
+  policiesData: null,
 }

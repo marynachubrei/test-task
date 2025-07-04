@@ -1,18 +1,35 @@
 import { createAction, props } from "@ngrx/store";
-import {Account, WorkQueue} from "../common/models";
+import {Communication, PerformanceMetric, Policy, PolicyData, ProgressMetric} from "../common/models";
 
-export const GET_WORK_QUEUE_START = "[DASHBOARD STATE] Get work queue start";
-export const GET_WORK_QUEUE_SUCCESS = "[DASHBOARD STATE] Get work queue success";
-export const GET_WORK_QUEUE_FAILURE = "[DASHBOARD STATE] Get work queue failure";
+export const GET_PERFORMANCE_METRICS_START = "[ACCOUNTS STATE] Get progress metrics start";
+export const GET_PERFORMANCE_METRICS_SUCCESS = "[ACCOUNTS STATE] Get progress metrics success";
+export const GET_PERFORMANCE_METRICS_FAILURE = "[ACCOUNTS STATE] Get progress metrics failure";
 
-export const GET_ACCOUNT_LIST_START = "[DASHBOARD STATE] Get account list start";
-export const GET_ACCOUNT_LIST_SUCCESS = "[DASHBOARD STATE] Get account list success";
-export const GET_ACCOUNT_LIST_FAILURE = "[DASHBOARD STATE] Get account list failure";
+export const GET_POLICIES_START = "[ACCOUNTS STATE] Get policies start";
+export const GET_POLICIES_SUCCESS = "[ACCOUNTS STATE] Get policies success";
+export const GET_POLICIES_FAILURE = "[ACCOUNTS STATE] Get policies failure";
 
-export const getWorkQueueStart = createAction(GET_WORK_QUEUE_START, props<{ id: string }>());
-export const getWorkQueueSuccess = createAction(GET_WORK_QUEUE_SUCCESS, props<{ workQueue: WorkQueue[] }>());
-export const getWorkQueueFailure = createAction(GET_WORK_QUEUE_FAILURE);
+export const GET_COMMUNICATION_DATA_START = "[ACCOUNTS STATE] Get communication data start";
+export const GET_COMMUNICATION_DATA_SUCCESS = "[ACCOUNTS STATE] Get communication data success";
+export const GET_COMMUNICATION_DATA_FAILURE = "[ACCOUNTS STATE] Get communication data failure";
 
-export const getAccountListStart = createAction(GET_ACCOUNT_LIST_START);
-export const getAccountListSuccess = createAction(GET_ACCOUNT_LIST_SUCCESS, props<{ accountList: Account[] }>());
-export const getAccountListFailure = createAction(GET_ACCOUNT_LIST_FAILURE);
+export const GET_POLICIES_DATA_START = "[ACCOUNTS STATE] Get policies data start";
+export const GET_POLICIES_DATA_SUCCESS = "[ACCOUNTS STATE] Get policies data success";
+export const GET_POLICIES_DATA_FAILURE = "[ACCOUNTS STATE] Get policies data failure";
+
+
+export const getPerformanceMetricsStart = createAction(GET_PERFORMANCE_METRICS_START, props<{ id: string }>());
+export const getPerformanceMetricsSuccess = createAction(GET_PERFORMANCE_METRICS_SUCCESS, props<{ performanceMetrics: PerformanceMetric[] }>());
+export const getPPerformanceMetricsFailure = createAction(GET_PERFORMANCE_METRICS_FAILURE);
+
+export const getPoliciesStart = createAction(GET_POLICIES_START, props<{ id: string }>());
+export const getPoliciesSuccess = createAction(GET_POLICIES_SUCCESS, props<{ policies: Policy[] }>());
+export const getPoliciesFailure = createAction(GET_POLICIES_FAILURE);
+
+export const getCommunicationDataStart = createAction(GET_COMMUNICATION_DATA_START, props<{ id: string }>());
+export const getCommunicationDataSuccess = createAction(GET_COMMUNICATION_DATA_SUCCESS, props<{ communicationData: Communication[] }>());
+export const getCommunicationDataFailure = createAction(GET_COMMUNICATION_DATA_FAILURE);
+
+export const getPoliciesDataStart = createAction(GET_POLICIES_DATA_START, props<{ id: string }>());
+export const getPoliciesDataSuccess = createAction(GET_POLICIES_DATA_SUCCESS, props<{ policiesData: PolicyData[] }>());
+export const getPoliciesDataFailure = createAction(GET_POLICIES_DATA_FAILURE);

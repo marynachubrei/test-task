@@ -1,1 +1,17 @@
-<p>policies works!</p>
+<div class="heading-2-primary">{{titles.policies}}</div>
+<div class="d-flex policies">
+  <app-wrapper class="w-100">
+    <ng-container wrapper-content>
+      <div class="card-container">
+        <app-policy-card
+          *ngFor="let policy of policies$|async"
+          [title]="policy.title"
+          [icon]="policy.icon"
+          [premium]="policy.premium"
+          [effDate]="policy.effectiveDate"
+          [colorClass]="policy.class"
+        ></app-policy-card>
+      </div>
+    </ng-container>
+  </app-wrapper>
+</div>

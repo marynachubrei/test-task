@@ -1,22 +1,30 @@
 import {RouterModule, Routes} from "@angular/router";
-import {AuthComponent} from "./auth/auth.component";
 import {NgModule} from "@angular/core";
+import {LayoutComponent} from "./layout/layout.component";
+import {OverviewComponent} from "./dashboard/overview/overview.component";
+import {AccountsOverviewComponent} from "./accounts/accounts-overview/accounts-overview.component";
+import {RoutingConstants} from "./shared/commons/constants/routing-constants";
 
 export const routes: Routes = [
   {
-    path: "login",
-    component: AuthComponent
-  },
-  {
-    path: "",
-    component: AuthComponent
-  },
-  {
-    path: "documents",
-    //component: DocumentsComponent,
-    loadChildren: () => import("./documents/documents.module").then((m) => m.DocumentsModule),
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: "", redirectTo: `/${RoutingConstants.DASHBOARD}`, pathMatch: "full" },
+      {
+        path: `${RoutingConstants.DASHBOARD}`,
+        component: OverviewComponent,
+        loadChildren: () => import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
 
-  }
+      },
+      {
+        path: `${RoutingConstants.ACCOUNTS}`,
+        component: AccountsOverviewComponent,
+        loadChildren: () => import("./accounts/accounts.module").then((m) => m.AccountsModule),
+      }
+    ]
+  },
+
 ]
 
 @NgModule({

@@ -1,26 +1,30 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
-import {DashboardConstants} from "../common/constants";
-import {Account, WorkQueue} from "../common/models";
+import {AccountsConstants} from "../common/constants";
+import {Communication, PerformanceMetric, Policy, PolicyData} from "../common/models";
 
 @Injectable({providedIn: 'root'})
 
-export class DashboardService {
+export class AccountsService {
   constructor(
-    //@Inject("baseApiUrl") private baseUrl: string,
-    http: HttpClient,
-    // private manageLocalstorageService: ManageLocalstorageService,
+
   ) {
-    // super(http);
-    // this.setBaseApiUrl(this.baseUrl);
   }
 
-  gerWorkQueue(id: string): Observable<WorkQueue[]>{
-    return of(DashboardConstants.WORK_QUEUE_DATA);
+  gerPerformanceMetrics(id: string): Observable<PerformanceMetric[]>{
+    return of(AccountsConstants.PERFORMANCE_METRIC_CARDS);
   }
 
-  gerAccountList(): Observable<Account[]>{
-    return of(DashboardConstants.ACCOUNT_LIST_DATA);
+  getPolicies(id: string): Observable<Policy[]>{
+    return of(AccountsConstants.POLICIES);
+  }
+
+  getCommunicationData(id: string): Observable<Communication[]>{
+    return of(AccountsConstants.COMMUNICATION_DATA);
+  }
+
+  getPoliciesData(id: string): Observable<PolicyData[]>{
+    return of(AccountsConstants.POLICIES_DATA);
   }
 }

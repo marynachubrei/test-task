@@ -1,1 +1,15 @@
-<p>work-queue works!</p>
+<app-wrapper class="dashboard-work-queue" [title]="titles.workQueue" [titleClass]="'title-gap'">
+  <ng-container wrapper-content>
+    <div class="button-gap title-gap">
+      <app-action-button
+        *ngFor="let navButton of tableButtons"
+        [title]="navButton.name"
+        [isSelected]="true"
+        [isIcon]="false"
+      ></app-action-button></div>
+    <app-table
+      [data]="userData$|async"
+      [columns]="tableColumns">
+    </app-table>
+  </ng-container>
+</app-wrapper>

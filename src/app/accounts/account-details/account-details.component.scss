@@ -1,0 +1,47 @@
+@import "../../../../src/styles/variables";
+
+.account-details{
+  display: flex;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $light-gray;
+      border-radius: 8px;
+      height: 32px;
+      width: 25px;
+      margin-left: 20px;
+    }
+  }
+
+  &-options {
+    border-right: 1px dashed $gray ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+    min-width: 300px;
+  }
+
+  &-selected-option {
+    width: 80%;
+  }
+
+  &-sub-option {
+    padding-left: 20px;
+
+    &-title{
+      cursor: pointer;
+
+      &:not(:last-child) {
+      margin-bottom: 20px;
+    }}
+  }
+}

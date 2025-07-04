@@ -1,1 +1,23 @@
-<p>accounts works!</p>
+<app-wrapper [title]="titles.myAccounts" [titleClass]="'title-gap'">
+  <ng-container header-content>
+    <app-search
+      class="accounts-search"
+      [isUnderlined]="true"
+      [height]="32"
+    ></app-search>
+
+    <div class="accounts-action-buttons button-gap">
+      <app-action-button
+        *ngFor="let actionButton of actionButtons"
+        [title]="actionButton.name"
+        [isSelected]="actionButton.isSelected"
+      ></app-action-button>
+    </div>
+  </ng-container>
+
+  <ng-container wrapper-content>
+    <div class="accounts-table">
+      <app-table [data]="accountList$|async" [columns]="accountsColumns"></app-table>
+    </div>
+  </ng-container>
+</app-wrapper>

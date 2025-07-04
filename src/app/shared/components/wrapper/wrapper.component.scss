@@ -1,0 +1,27 @@
+@import "../../../../../src/styles/variables";
+
+.wrapper {
+  &-underlined {
+    border: $border-blue;
+    background-color: $bg-light;
+  }
+
+  background-color: $bg-card;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    display: flex;
+    align-items: center;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-selected {
+    border: $border-neon-blue-2;
+  }
+}

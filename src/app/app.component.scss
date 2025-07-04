@@ -1,0 +1,15 @@
+@import "../../src/styles/variables";
+
+.app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3f8cff; // bright blue
+}
+
+* {
+ // height: 100%;
+
+  background-color: #1a1c24;
+  color: $gray;
+}

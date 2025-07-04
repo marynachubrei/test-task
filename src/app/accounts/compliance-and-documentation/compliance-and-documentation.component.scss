@@ -1,0 +1,19 @@
+.compliance-and-documentation {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}

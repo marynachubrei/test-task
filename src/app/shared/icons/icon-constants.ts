@@ -1,0 +1,16 @@
+export const IconConstants = {
+threeDots: 'threeDots',
+  account: 'account',
+  broker: 'broker',
+  dashboard: 'dashboard',
+  check: 'check',
+  ship: 'ship',
+  general: 'general',
+  worker: 'worker',
+  property: 'property',
+  umbrella: 'umbrella',
+  arrowUp: 'arrowUp',
+  arrowDown: 'arrowDown',
+  rocket: 'rocket',
+  paperclip: 'paperclip',
+}

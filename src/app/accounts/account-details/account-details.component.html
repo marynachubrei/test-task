@@ -1,1 +1,48 @@
-<p>account-details works!</p>
+<div class="heading-2-primary title-gap">Account Details</div>
+
+<app-wrapper>
+  <ng-container wrapper-content>
+    <div class="account-details">
+      <div class="account-details-options">
+        <div *ngFor="let option of accountDetailsOptions">
+          <div
+            *ngIf="selectedOptionId!==option?.id; else selectedOption"
+            class="account-details-title main-content-text"
+            (click)="selectMenu(option?.id||0)"
+          >
+            {{option.name|uppercase}}
+            <div class="account-details-title-count">{{option.subOptions.length}}</div>
+          </div>
+
+          <ng-template #selectedOption>
+            <app-wrapper [isUnderlined]="false">
+              <ng-container wrapper-content>
+                <div
+                  class="account-details-title main-content-text"
+                  (click)="selectMenu(option?.id||0)"
+                >
+                  {{option.name|uppercase}} <div class="account-details-title-count">{{option.subOptions.length}}</div>
+                </div>
+
+                <div
+                  class="account-details-sub-option main-content-text"
+                  [class.d-block]="option?.id===selectedOptionId"
+                >
+                  <div
+                    *ngFor="let subOption of option?.subOptions"
+                    class="account-details-sub-option-title"
+                    [class.link]="subOption===selectedSubOption"
+                  >{{subOption}}</div>
+                </div>
+              </ng-container>
+            </app-wrapper>
+          </ng-template>
+        </div>
+      </div>
+
+      <app-winnability [selectedSubOption]="selectedSubOption"></app-winnability>
+    </div>
+  </ng-container>
+</app-wrapper>
+
+

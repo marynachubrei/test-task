@@ -1,0 +1,36 @@
+.policy-card {
+
+
+  width: 250px;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+      line-height: 24px;
+      margin-right: 8px;
+    }
+
+    &.blue {
+      color: #3aa0ff;
+    }
+
+    &.green {
+      color: #4cd964;
+    }
+
+    &.purple {
+      color: #a864e8;
+    }
+  }
+
+  .premium,
+  .eff-date {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}

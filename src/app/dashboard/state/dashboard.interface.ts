@@ -1,5 +1,6 @@
-import {User} from "../../commons/models";
+import {Account, WorkQueue} from "../common/models";
 
-export interface UserStateInterface {
-  user: User|null
+export interface DashboardStateInterface {
+  workQueue: WorkQueue[]|null;
+  accountList: Account[]|null;
 }
